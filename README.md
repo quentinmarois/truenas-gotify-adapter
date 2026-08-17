@@ -2,6 +2,8 @@
 
 Send TrueNAS alerts to Gotify with priorities that follow the native TrueNAS alert severity.
 
+Current stable release: **1.0.0**.
+
 The adapter supports two modes:
 
 - **Native mode (recommended):** connects to the TrueNAS JSON-RPC WebSocket API, subscribes to `alert.list`, and maps each alert's `level` to a Gotify priority.
@@ -36,7 +38,7 @@ Create a dedicated TrueNAS API key. The minimum role needed by the alert API is 
 services:
   truenas-gotify-adapter:
     container_name: truenas-gotify-adapter
-    image: ghcr.io/quentinmarois/truenas-gotify-adapter:main
+    image: ghcr.io/quentinmarois/truenas-gotify-adapter:1.0.0
     restart: unless-stopped
     environment:
       GOTIFY_URL: https://gotify.example.com/
@@ -68,7 +70,7 @@ If `TRUENAS_URL` and `TRUENAS_API_KEY` are not set, legacy mode is enabled autom
 services:
   truenas-gotify-adapter:
     container_name: truenas-gotify-adapter
-    image: ghcr.io/quentinmarois/truenas-gotify-adapter:main
+    image: ghcr.io/quentinmarois/truenas-gotify-adapter:1.0.0
     restart: unless-stopped
     environment:
       GOTIFY_URL: https://gotify.example.com/
